@@ -4,41 +4,163 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>QuickTools - All Your Simple Web Tools</title>
+<!-- Google Fonts for nicer typography -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 <style>
-  body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 1rem; background: #f9f9f9; color: #333; }
-  h1 { text-align: center; margin-bottom: 1rem; }
-  section { margin-bottom: 2rem; }
-  ul { list-style: none; padding: 0; }
-  li { margin: 0.5rem 0; }
-  a { color: #0077cc; text-decoration: none; font-weight: bold; }
-  a:hover { text-decoration: underline; }
-  footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #666; }
+  body {
+    font-family: 'Inter', sans-serif;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background: #f4f6f8;
+    color: #222;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  p.description {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1.5rem;
+  }
+  .category-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: default;
+  }
+  .category-card:hover {
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+    transform: translateY(-4px);
+  }
+  .category-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .tools-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .tools-list li {
+    margin: 0.6rem 0;
+  }
+  .tools-list a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+  }
+  .tools-list a:hover {
+    color: #005fa3;
+  }
+  /* Icon style */
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: #0077cc;
+    flex-shrink: 0;
+  }
+  footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 400px) {
+    .category-card {
+      padding: 1rem;
+    }
+  }
 </style>
 </head>
 <body>
   <h1>QuickTools</h1>
-  <p>Your one-stop site for simple, fast, and privacy-friendly web tools.</p>
+  <p class="description">Your one-stop site for simple, fast, and privacy-friendly web tools.</p>
 
-  <section>
-    <h2>Text & Content Tools</h2>
-    <ul>
-      <li><a href="remove-duplicates.html">Remove Duplicate Lines</a></li>
-    </ul>
-  </section>
+  <div class="categories">
 
-  <section>
-    <h2>Calculators & Converters</h2>
-    <ul>
-      <li><a href="loan-calculator.html">Loan / Mortgage Calculator</a></li>
-    </ul>
-  </section>
+    <section class="category-card" aria-labelledby="text-content-title">
+      <h2 id="text-content-title" class="category-title">
+        <!-- Text icon -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 6h16v2H4zM4 10h10v2H4zM4 14h16v2H4zM4 18h10v2H4z"/>
+        </svg>
+        Text & Content Tools
+      </h2>
+      <ul class="tools-list">
+        <li>
+          <a href="remove-duplicates.html">
+            <!-- Check icon -->
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M9 16.17l-3.59-3.58L4 14l5 5 12-12-1.41-1.42z"/>
+            </svg>
+            Remove Duplicate Lines
+          </a>
+        </li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>SEO & Web Tools</h2>
-    <ul>
-      <li><a href="meta-preview.html">Meta Tag Previewer</a></li>
-    </ul>
-  </section>
+    <section class="category-card" aria-labelledby="calc-convert-title">
+      <h2 id="calc-convert-title" class="category-title">
+        <!-- Calculator icon -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7V7zm0 4h2v2H7v-2zm0 4h2v2H7v-2zm4-8h6v2h-6V7zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2z"/>
+        </svg>
+        Calculators & Converters
+      </h2>
+      <ul class="tools-list">
+        <li>
+          <a href="loan-calculator.html">
+            <!-- Dollar icon -->
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 1L3 5v6c0 5 3.5 9 9 10 5-1 9-5 9-10V5l-9-4zm0 17.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/>
+            </svg>
+            Loan / Mortgage Calculator
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="category-card" aria-labelledby="seo-web-title">
+      <h2 id="seo-web-title" class="category-title">
+        <!-- SEO icon -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/>
+        </svg>
+        SEO & Web Tools
+      </h2>
+      <ul class="tools-list">
+        <li>
+          <a href="meta-preview.html">
+            <!-- Preview icon -->
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 6a9.77 9.77 0 019 6 9.77 9.77 0 01-18 0 9.77 9.77 0 019-6zm0 10a4 4 0 100-8 4 4 0 000 8z"/>
+            </svg>
+            Meta Tag Previewer
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </div>
 
   <footer>© 2025 QuickTools — Built with ❤️</footer>
 </body>
