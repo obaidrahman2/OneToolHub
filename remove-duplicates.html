@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Remove Duplicate Lines | QuickTools</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 1rem; background: #f9f9f9; color: #333; }
+  textarea { width: 100%; height: 250px; font-family: monospace; font-size: 14px; padding: 0.5rem; }
+  button { margin-top: 0.5rem; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer; }
+  a { color: #0077cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  header, footer { text-align: center; margin-bottom: 1rem; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Remove Duplicate Lines</h1>
+    <a href="index.html">← Back to Home</a>
+  </header>
+
+  <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+  <br />
+  <button onclick="removeDuplicates()">Remove Duplicates</button>
+  <br /><br />
+  <textarea id="outputText" placeholder="Result will appear here..." readonly></textarea>
+
+  <script>
+    function removeDuplicates() {
+      const input = document.getElementById('inputText').value;
+      const lines = input.split('\n');
+      const unique = [...new Set(lines)];
+      document.getElementById('outputText').value = unique.join('\n');
+    }
+  </script>
+
+  <footer>© 2025 QuickTools</footer>
+</body>
+</html>
