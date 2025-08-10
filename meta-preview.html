@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meta Tag Previewer | QuickTools</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 1rem; background: #f9f9f9; color: #333; }
+  label { display: block; margin: 1rem 0 0.2rem; }
+  input, textarea { width: 100%; padding: 0.5rem; font-size: 1rem; }
+  button { margin-top: 1rem; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer; }
+  .preview-box { border: 1px solid #ccc; padding: 1rem; margin-top: 1rem; background: white; border-radius: 5px; }
+  .preview-title { font-size: 1.2rem; color: #1a0dab; margin-bottom: 0.2rem; }
+  .preview-url { font-size: 0.9rem; color: #006621; margin-bottom: 0.5rem; }
+  .preview-description { font-size: 1rem; color: #545454; }
+  a { color: #0077cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  header, footer { text-align: center; margin-bottom: 1rem; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Meta Tag Previewer</h1>
+    <a href="index.html">← Back to Home</a>
+  </header>
+
+  <label for="title">Title Tag:</label>
+  <input type="text" id="title" placeholder="Page Title" />
+
+  <label for="url">URL:</label>
+  <input type="text" id="url" placeholder="https://example.com/page" />
+
+  <label for="description">Meta Description:</label>
+  <textarea id="description" rows="4" placeholder="Page description here..."></textarea>
+
+  <button onclick="showPreview()">Show Preview</button>
+
+  <div id="preview" class="preview-box" style="display:none;">
+    <div class="preview-title" id="previewTitle"></div>
+    <div class="preview-url" id="previewUrl"></div>
+    <div class="preview-description" id="previewDescription"></div>
+  </div>
+
+  <script>
+    function showPreview() {
+      const title = document.getElementById('title').value.trim();
+      const url = document.getElementById('url').value.trim();
+      const description = document.getElementById('description').value.trim();
+
+      if (!title || !url || !description) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      document.getElementById('previewTitle').textContent = title;
+      document.getElementById('previewUrl').textContent = url;
+      document.getElementById('previewDescription').textContent = description;
+      document.getElementById('preview').style.display = 'block';
+    }
+  </script>
+
+  <footer>© 2025 QuickTools</footer>
+</body>
+</html>
