@@ -28,9 +28,9 @@
   <script>
     function removeDuplicates() {
       const input = document.getElementById('inputText').value;
-      const lines = input.split('\n');
+      const lines = input.split('\\n');
       const unique = [...new Set(lines)];
-      document.getElementById('outputText').value = unique.join('\n');
+      document.getElementById('outputText').value = unique.join('\\n');
     }
   </script>
 
