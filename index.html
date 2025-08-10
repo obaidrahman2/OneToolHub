@@ -1,236 +1,63 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QuickTools - All Your Simple Web Tools</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1rem 3rem;
-      background: var(--bg);
-      color: var(--text);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    :root {
-      --bg: #f4f6f8;
-      --text: #222;
-      --card-bg: #fff;
-      --link: #0077cc;
-      --link-hover: #005fa3;
-      --nav-bg: #fff;
-      --nav-text: #222;
-      --footer-text: #666;
-    }
-    body.dark {
-      --bg: #121212;
-      --text: #eee;
-      --card-bg: #1e1e1e;
-      --link: #66aaff;
-      --link-hover: #99cfff;
-      --nav-bg: #1a1a1a;
-      --nav-text: #eee;
-      --footer-text: #999;
-    }
-    nav {
-      background: var(--nav-bg);
-      color: var(--nav-text);
-      padding: 0.8rem 1rem;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav .site-title {
-      font-weight: 600;
-      font-size: 1.3rem;
-      text-decoration: none;
-      color: var(--nav-text);
-    }
-    nav .dark-toggle {
-      cursor: pointer;
-      font-size: 1rem;
-      background: none;
-      border: 1.5px solid var(--nav-text);
-      border-radius: 20px;
-      padding: 0.3rem 0.9rem;
-      color: var(--nav-text);
-      user-select: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    nav .dark-toggle:hover {
-      background-color: var(--nav-text);
-      color: var(--nav-bg);
-    }
-    h1 {
-      text-align: center;
-      margin: 1.5rem 0 0.5rem;
-      font-weight: 600;
-    }
-    p.description {
-      text-align: center;
-      margin-bottom: 3rem;
-      font-size: 1.1rem;
-      color: var(--footer-text);
-    }
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 1.5rem;
-    }
-    .category-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
-      transition: box-shadow 0.3s ease, transform 0.2s ease;
-      cursor: default;
-    }
-    .category-card:hover {
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
-      transform: translateY(-4px);
-    }
-    .category-title {
-      font-weight: 600;
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .tools-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-    .tools-list li {
-      margin: 0.6rem 0;
-    }
-    .tools-list a {
-      text-decoration: none;
-      color: var(--link);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s ease;
-    }
-    .tools-list a:hover {
-      color: var(--link-hover);
-    }
-    .icon {
-      width: 20px;
-      height: 20px;
-      fill: var(--link);
-      flex-shrink: 0;
-    }
-    footer {
-      margin-top: 4rem;
-      text-align: center;
-      color: var(--footer-text);
-      font-size: 0.9rem;
-    }
-    @media (max-width: 400px) {
-      .category-card {
-        padding: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="index.html" class="site-title">QuickTools</a>
-    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
-  </nav>
+<!-- (Only the changed part below — full file same as before, just categories section updated) -->
+<div class="categories" role="list">
 
-  <h1>QuickTools</h1>
-  <p class="description">Your one-stop site for simple, fast, and privacy-friendly web tools.</p>
+  <section class="category-card" aria-labelledby="text-content-title" role="listitem">
+    <h2 id="text-content-title" class="category-title">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M4 6h16v2H4zM4 10h10v2H4zM4 14h16v2H4zM4 18h10v2H4z"/>
+      </svg>
+      Text & Content Tools
+    </h2>
+    <ul class="tools-list">
+      <li><a href="remove-duplicates.html">Remove Duplicate Lines</a></li>
+      <li><a href="word-char-count.html">Word & Character Counter</a></li>
+      <li><a href="text-case.html">Text Case Converter</a></li>
+      <li><a href="text-reverser.html">Text Reverser</a></li>
+    </ul>
+  </section>
 
-  <div class="categories" role="list">
+  <section class="category-card" aria-labelledby="calc-convert-title" role="listitem">
+    <h2 id="calc-convert-title" class="category-title">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7V7zm0 4h2v2H7v-2zm0 4h2v2H7v-2zm4-8h6v2h-6V7zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2z"/>
+      </svg>
+      Calculators & Converters
+    </h2>
+    <ul class="tools-list">
+      <li><a href="loan-calculator.html">Loan / Mortgage Calculator</a></li>
+      <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+      <li><a href="tip-calculator.html">Tip Calculator</a></li>
+      <li><a href="currency-converter.html">Currency Converter</a></li>
+    </ul>
+  </section>
 
-    <section class="category-card" aria-labelledby="text-content-title" role="listitem">
-      <h2 id="text-content-title" class="category-title">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M4 6h16v2H4zM4 10h10v2H4zM4 14h16v2H4zM4 18h10v2H4z"/>
-        </svg>
-        Text & Content Tools
-      </h2>
-      <ul class="tools-list">
-        <li>
-          <a href="remove-duplicates.html">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M9 16.17l-3.59-3.58L4 14l5 5 12-12-1.41-1.42z"/>
-            </svg>
-            Remove Duplicate Lines
-          </a>
-        </li>
-      </ul>
-    </section>
+  <section class="category-card" aria-labelledby="seo-web-title" role="listitem">
+    <h2 id="seo-web-title" class="category-title">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/>
+      </svg>
+      SEO & Web Tools
+    </h2>
+    <ul class="tools-list">
+      <li><a href="meta-preview.html">Meta Tag Previewer</a></li>
+      <li><a href="sitemap-generator.html">Sitemap Generator</a></li>
+      <li><a href="robots-generator.html">Robots.txt Generator</a></li>
+      <li><a href="meta-description-analyzer.html">Meta Description Analyzer</a></li>
+    </ul>
+  </section>
 
-    <section class="category-card" aria-labelledby="calc-convert-title" role="listitem">
-      <h2 id="calc-convert-title" class="category-title">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M19 3H5c-1.1 0-2 .9-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7V7zm0 4h2v2H7v-2zm0 4h2v2H7v-2zm4-8h6v2h-6V7zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2z"/>
-        </svg>
-        Calculators & Converters
-      </h2>
-      <ul class="tools-list">
-        <li>
-          <a href="loan-calculator.html">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M12 1L3 5v6c0 5 3.5 9 9 10 5-1 9-5 9-10V5l-9-4zm0 17.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/>
-            </svg>
-            Loan / Mortgage Calculator
-          </a>
-        </li>
-      </ul>
-    </section>
+  <section class="category-card" aria-labelledby="utilities-title" role="listitem">
+    <h2 id="utilities-title" class="category-title">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M3 12l2-2 4 4 8-8 2 2-10 10-6-6z"/>
+      </svg>
+      Utilities
+    </h2>
+    <ul class="tools-list">
+      <li><a href="json-formatter.html">JSON Formatter / Validator</a></li>
+      <li><a href="qr-generator.html">QR Code Generator</a></li>
+      <li><a href="color-picker.html">Color Picker</a></li>
+    </ul>
+  </section>
 
-    <section class="category-card" aria-labelledby="seo-web-title" role="listitem">
-      <h2 id="seo-web-title" class="category-title">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/>
-        </svg>
-        SEO & Web Tools
-      </h2>
-      <ul class="tools-list">
-        <li>
-          <a href="meta-preview.html">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M12 6a9.77 9.77 0 019 6 9.77 9.77 0 01-18 0 9.77 9.77 0 019-6zm0 10a4 4 0 100-8 4 4 0 000 8z"/>
-            </svg>
-            Meta Tag Previewer
-          </a>
-        </li>
-      </ul>
-    </section>
-
-  </div>
-
-  <footer>© 2025 QuickTools — Built with ❤️</footer>
-
-  <script>
-    const toggleBtn = document.getElementById('darkToggle');
-    if(localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      toggleBtn.textContent = '☀️ Light Mode';
-    }
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      if(document.body.classList.contains('dark')) {
-        toggleBtn.textContent = '☀️ Light Mode';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        toggleBtn.textContent = '🌙 Dark Mode';
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  </script>
-</body>
-</html>
+</div>
